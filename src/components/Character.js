@@ -1,20 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import styles from './Character.css';
 
 const Character = ({ _id, name, photoUrl }) => {
   return (
-    <Link to={`/character/${_id}`}>
-      <img src={photoUrl} alt={name}/>
-      <figcaption>{name}</figcaption>
-    </Link>
+    <div className={styles.Characer}>
+      <Link to={`/character/${_id}`}>
+        <img src={photoUrl} />
+        <p>{name}</p>
+      </ Link>
+    </div>
   );
 };
 
 Character.propTypes = {
   _id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequire,
-  photoUrl: PropTypes.string.isRequire
+  name: PropTypes.string.isRequired,
+  photoUrl: PropTypes.string.isRequired
 };
 
 export default Character;

@@ -2,21 +2,21 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Characters from '../components/Characters';
 import { getCharacters, getCharacterLoading } from '../selectors/charactersSelectors';
-import { fetchCharacters } from '../actions/charactersAction';
+import { updateCharacters } from '../actions/charactersAction';
 
-const allCharacters = () => {
+const CharacterContainer = () => {
   const characters = useSelector(getCharacters);
-  const charactersLoading = useSelector(getCharacterLoading);
+  const characterLoading = useSelector(getCharacterLoading);
   const dispatch = useDispatch();
-  const fetchCharacterList = () => dispatch(fetchCharacters);
+  const updateCharacterList = () => dispatch(updateCharacters());
 
   useEffect(() => {
-    fetchCharacterList();
+    updateCharacterList();
   }, []);
 
-  if(charactersLoading) return <h1>Loading...</h1>;
+  if(characterLoading) return <h1>Loading...</h1>;
 
-  return <Characters characters={characters} />;
+  return <Characters items={characters} />;
 };
 
-export default allCharacters;
+export default CharacterContainer;

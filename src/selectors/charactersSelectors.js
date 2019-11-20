@@ -1,2 +1,2 @@
-export const getCharacters = state => state.characters.charList;
-export const getCharacterLoading = state => state.characters.charLoading;
+export const getCharacters = (state) => state.characters.characterList;
+export const getCharacterLoading = (state) => state.characters.characterLoading;

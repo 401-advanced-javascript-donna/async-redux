@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+.Characters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  li {
+    list-style: none;
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: orangered;
+  }
+
+  a:visited {
+    color: orangered;
+  }
+
+  img {
+    max-width: 25vw;
+  }
+}
